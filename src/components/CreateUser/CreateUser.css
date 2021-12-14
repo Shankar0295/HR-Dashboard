@@ -1,0 +1,47 @@
+.input-text{
+    display: block;
+}
+
+.input-container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-fields{
+    margin-bottom: 15px;
+}
+
+input {
+    width: 95%;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 18px;
+}
+
+input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #008CBA;
+}
+/* 
+.input-field-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+} */
+.create-btn{
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #008CBA;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+label{
+    font-weight: bold;
+    font-size:18px;
+    color:#3f3f3f
+}

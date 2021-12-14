@@ -1,0 +1,102 @@
+[
+{
+"dob": "10/10/1995",
+"doj": "10/01/2021",
+"email": "johndoe@gmail.com",
+"empId": 101,
+"id": 1,
+"name": "John Doe",
+"role": "Tester",
+"type": "Employee"
+},
+{
+    "dob": "10/10/1996",
+    "doj": "10/01/2021",
+    "email": "doeJohn@gmail.com",
+    "empId": 102,
+    "id": 2,
+    "name": "Doe John",
+    "role": "Developer",
+    "type": "Employee"
+},
+{
+    "dob": "02/02/1989",
+    "doj": "12/01/2019",
+    "email": "hogan@gmail.com",
+    "empId": 103,
+    "id": 3,
+    "name":"Hester Hogan",
+    "role": "Developer",
+    "type": "Contract"
+},
+{
+    "dob": "31/10/1993",
+    "doj": "12/01/2020",
+    "email": "Oliver@gmail.com",
+    "empId": 104,
+    "id": 4,
+    "name":"Oliver Hogan",
+    "role": "Developer",
+    "type": "Employee"
+},
+{
+    "dob": "31/10/1992",
+    "doj": "15/01/2019",
+    "email": "walsh@gmail.com",
+    "empId":105,
+    "id": 5,
+    "name":"Sean Walsh",
+    "role": "Designer",
+    "type": "Contract"
+},
+{
+    "dob": "05/08/1985",
+    "doj": "10/01/2018",
+    "email": "lance@gmail.com",
+    "empId": 106,
+    "id": 6,
+    "name": "Lance Watson",
+    "role": "Tester",
+    "type": "Employee"
+    },
+    {
+        "dob": "04/11/1990",
+        "doj": "11/07/2021",
+        "email": "bertie@gmail.com",
+        "empId": 107,
+        "id": 7,
+        "name": "Bertie Yetes",
+        "role": "Desinger",
+        "type": "Contract"
+    },
+    {
+        "dob": "10/02/1987",
+        "doj": "12/12/2020",
+        "email": "ricky@gmail.com",
+        "empId": 108,
+        "id": 8,
+        "name":"Ricky Clarke",
+        "role": "Designer",
+        "type": "Employee"
+    },
+    {
+        "dob": "31/03/1993",
+        "doj": "12/04/2020",
+        "email": "mathew@gmail.com",
+        "empId": 109,
+        "id": 9,
+        "name":"Mathew Wade",
+        "role": "Manager",
+        "type": "Contract"
+    },
+    {
+        "dob": "31/10/1988",
+        "doj": "15/01/2016",
+        "email": "holding@gmail.com",
+        "empId": 110,
+        "id": 10,
+        "name":"Malcolm Walsh",
+        "role": "Manager",
+        "type": "Employee"
+    }
+]

@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Dashboard from './components/Dashboard/Dashboard'
+import CreateUser from './components/CreateUser/CreateUser'
+import { Routes, Route } from 'react-router-dom';
+import JsonData from './data.json';
 function App() {
+
+  localStorage.setItem("data", JSON.stringify(JsonData))
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Dashboard />}></Route>
+        <Route path="/user" element={<CreateUser />}></Route>
+      </Routes>
     </div>
   );
 }
