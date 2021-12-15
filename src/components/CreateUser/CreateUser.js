@@ -32,7 +32,6 @@ const CreateData = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(typeof (e.target.value))
         setFormValues({ ...formValues, [name]: value });
     };
 
