@@ -52,7 +52,6 @@ const Dashboard = () => {
 
     const sortById = (e) => {
         const sortId = e.target.id
-        console.log(sortId)
         if (isEmpId) {
             const sortEmpid = data.sort((a, b) => (parseFloat(a[sortId] - b[sortId])))
             setData(sortEmpid)
