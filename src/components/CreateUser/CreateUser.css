@@ -2,28 +2,26 @@
     display: block;
 }
 
-.input-container{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 .input-fields{
     margin-bottom: 15px;
 }
-
+input[type="text"]{
+    text-transform: capitalize;
+}
 input, select {
-    width: 95%;
-    padding: 20px 20px;
+    width: 100%;
+    padding: 15px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 0;
+    border: 1px solid #cccccc;
     font-size: 18px;
 }
 
 input:focus{
     outline: none;
-    border: none;
-    border-bottom: 2px solid #008CBA;
+    /* border: none;
+    border-bottom: 2px solid #008CBA; */
 }
 /* 
 .input-field-wrapper{
@@ -47,4 +45,14 @@ label{
 }
 .error-field{
     color: red;
+}
+.create-title{
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.create_title-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

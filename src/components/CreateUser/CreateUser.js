@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './CreateUser.css';
 import { Link, useLocation } from 'react-router-dom';
 import useLocalStorage from '../../hooks/useLocalStorage';
+import Footer from '../Footer/Footer';
+import Button from '@mui/material/Button';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+
 
 const CreateData = () => {
     const location = useLocation();
@@ -39,7 +44,7 @@ const CreateData = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-        if (edit && Object.keys(formErrors).length === 0 && isSubmit) {
+        if (edit && Object.keys(formErrors).length === 0) {
             setData(data.map((item) => {
                 if (item.id === editId) {
                     return { ...item, "dob": formValues.dob, "email": formValues.email, "empId": +formValues.empId, "name": formValues.name, "role": formValues.role, "doj": formValues.doj, "type": formValues.type }
@@ -49,7 +54,7 @@ const CreateData = () => {
             setEditId(null);
             setEdit(false);
         }
-        else if (Object.keys(formErrors).length === 0 && isSubmit) {
+        else if (!edit && Object.keys(formErrors).length === 0) {
             // onload
             setData([...data, { "id": new Date().getTime().toString(), "name": formValues.name, "empId": +formValues.empId, "role": formValues.role, "email": formValues.email, "dob": formValues.dob, "doj": formValues.doj, "type": formValues.type }])
             console.log(data)
@@ -80,8 +85,8 @@ const CreateData = () => {
             errors.empId = "Employee id is required"
         } else if (!empIdregex.test(values.empId)) {
             errors.empId = "Enter numbers only"
-        } else if (uniqueIds !== undefined) {
-            errors.empId = "employee id must be unique"
+        } else if (uniqueIds !== undefined && !edit) {
+            errors.empId = "Employee id must be unique"
         }
         if (!values.role) {
             errors.role = "Employee role is required"
@@ -110,9 +115,11 @@ const CreateData = () => {
 
     return (
         <div className="container">
-            <div>
-                <h1>Create Employee Details</h1>
-                <Link to="/"><button>Go to Dashboard</button></Link>
+            <div className="create_title-container">
+                <h2 className="create-title">Create Employee Details</h2>
+                <Link to="/dashboard"> <Button variant="outlined" className="fw-600" endIcon={<ArrowCircleRightIcon />}>
+                    Go to Dashboard
+                    </Button></Link>
             </div>
             <div className="input-container" >
                 <form onSubmit={handleSumbit}>
@@ -147,28 +154,29 @@ const CreateData = () => {
                         <p className="error-field">{formErrors.type}</p>
                         <div className="input-fields">
                             <label htmlFor="doj" className="input-text">Date of Joining</label>
-                            <input type="text" className="input-text" name="doj" placeholder="dd/mm/yyyy" value={formValues.doj} onChange={handleChange}></input>
+                            <input type="date" className="input-text" name="doj" placeholder="dd/mm/yyyy" value={formValues.doj} onChange={handleChange}></input>
                         </div>
                         <p className="error-field">{formErrors.doj}</p>
                         <div className="input-fields">
                             <label htmlFor="email" className="input-text">Email</label>
-                            <input type="text" className="input-text" name="email" placeholder="Enter email" value={formValues.email} onChange={handleChange}></input>
+                            <input type="email" className="input-text" name="email" placeholder="Enter email" value={formValues.email} onChange={handleChange}></input>
                         </div>
                         <p className="error-field">{formErrors.email}</p>
                         <div className="input-fields">
                             <label htmlFor="dob" className="input-text">Date of Birth</label>
-                            <input type="text" className="input-text" name="dob" placeholder="dd/mm/yyyy" value={formValues.dob} onChange={handleChange}></input>
+                            <input type="date" className="input-text" name="dob" placeholder="dd/mm/yyyy" value={formValues.dob} onChange={handleChange}></input>
                         </div>
                         <p className="error-field">{formErrors.dob}</p>
                     </div>
                     <div className="input-fields">
-                        <button type="submit" className="create-btn">{edit ? 'Save Employee' : 'Add Employee'}</button>
+                        <Button variant="outlined" type="submit" className="btn-m10 fw-600" startIcon={<AddCircleIcon />}>
+                            {edit ? 'Save Employee' : 'Add Employee'}
+                        </Button>
                     </div>
 
                 </form>
             </div>
-            {/* <DataList props={data} batchdelete={batchdelete} editItem={editItem} deleteItem={deleteItem} handleOnChange={handleOnChange} deleteSelected={deleteSelected} checkedState={checkedState}></DataList> */}
-
+            <Footer />
         </div>
     )
 }
